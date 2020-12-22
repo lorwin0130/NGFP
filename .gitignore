@@ -1,0 +1,31 @@
+.idea/
+.vscode/
+Backups/
+blob_storage/
+Cache/
+CachedData/
+CachedExtensions/
+Code Cache/
+conda/
+GPUCache/
+logs/
+User/
+
+Cookies
+Cookies-journal
+languagepacks.json
+machineid
+Network Persistent State
+rapid_render.json
+storage.json
+
+dataset/dud-e/*
+dataset/ff/*
+dataset/pdb/*
+dataset/pickle/*
+dataset/test
+dataset/pd_lst_13_13001-14000
+dataset/pre_data_all.txt
+dataset/pre_data.txt
+output/*
+pickle
