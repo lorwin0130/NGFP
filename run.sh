@@ -1,4 +1,4 @@
-conda activate py36
+# conda activate py36
 
 export PICKLE_DIR='pickle'
 export OUTPUT_DIR='output'
@@ -14,7 +14,7 @@ for DIR_NAME in $pickle_list
 do
     INPUT_DIR=$PICKLE_DIR/$DIR_NAME
     python run.py \
-        --batch_size=64 \
+        --batch_size=128 \
         --epoch=100 \
         --dim_m=128 \
         --dim_p=100 \

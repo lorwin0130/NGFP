@@ -29,3 +29,4 @@ dataset/pre_data_all.txt
 dataset/pre_data.txt
 output/*
 pickle
+nohup.out

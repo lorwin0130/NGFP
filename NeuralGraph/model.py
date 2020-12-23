@@ -78,7 +78,7 @@ class GCN(nn.Module):
         out = T.sigmoid(self.output_layer(fp))
         return out
 
-    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=100, lr=1e-5):
+    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=5, lr=1e-5):
         criterion = FocalLoss()
         optimizer = optim.Adam(self.parameters(), lr=lr)
         best_loss = np.inf
@@ -116,7 +116,7 @@ class GCN(nn.Module):
                 last_saving = epoch
             else:
                 print('[Performance] loss_valid is not improved.')
-            if early_stop is not None and epoch - last_saving > early_stop: break
+            if early_stop is not None and epoch - last_saving > early_stop and auc_valid > 0.85: break
 
         return T.load(path + '.pkg')
 
@@ -170,7 +170,7 @@ class GCN_FIN(nn.Module):
         out = T.sigmoid(self.output_layer(fp))
         return out
 
-    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=100, lr=1e-5):
+    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=5, lr=1e-5):
         criterion = FocalLoss()
         optimizer = optim.Adam(self.parameters(), lr=lr)
         best_loss = np.inf
@@ -208,7 +208,7 @@ class GCN_FIN(nn.Module):
                 last_saving = epoch
             else:
                 print('[Performance] loss_valid is not improved.')
-            if early_stop is not None and epoch - last_saving > early_stop: break
+            if early_stop is not None and epoch - last_saving > early_stop and auc_valid > 0.85: break
 
         return T.load(path + '.pkg')
 
@@ -264,7 +264,7 @@ class GAT(nn.Module):
         out = T.sigmoid(self.fc3(fp))
         return out
 
-    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=100, lr=1e-5):
+    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=5, lr=1e-5):
         criterion = FocalLoss()
         optimizer = optim.Adam(self.parameters(), lr=lr)
         best_loss = np.inf
@@ -302,7 +302,7 @@ class GAT(nn.Module):
                 last_saving = epoch
             else:
                 print('[Performance] loss_valid is not improved.')
-            if early_stop is not None and epoch - last_saving > early_stop: break
+            if early_stop is not None and epoch - last_saving > early_stop and auc_valid > 0.85: break
 
         return T.load(path + '.pkg')
 
@@ -356,7 +356,7 @@ class GAT_FIN(nn.Module):
         out = T.sigmoid(self.fc3(fp))
         return out
 
-    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=100, lr=1e-5):
+    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=5, lr=1e-5):
         criterion = FocalLoss()
         optimizer = optim.Adam(self.parameters(), lr=lr)
         best_loss = np.inf
@@ -394,7 +394,7 @@ class GAT_FIN(nn.Module):
                 last_saving = epoch
             else:
                 print('[Performance] loss_valid is not improved.')
-            if early_stop is not None and epoch - last_saving > early_stop: break
+            if early_stop is not None and epoch - last_saving > early_stop and auc_valid > 0.85: break
 
         return T.load(path + '.pkg')
 
@@ -450,7 +450,7 @@ class GCH(nn.Module):
         out = T.sigmoid(self.fc3(fp))
         return out
 
-    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=100, lr=1e-5):
+    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=5, lr=1e-5):
         criterion = FocalLoss()
         optimizer = optim.Adam(self.parameters(), lr=lr)
         best_loss = np.inf
@@ -488,7 +488,7 @@ class GCH(nn.Module):
                 last_saving = epoch
             else:
                 print('[Performance] loss_valid is not improved.')
-            if early_stop is not None and epoch - last_saving > early_stop: break
+            if early_stop is not None and epoch - last_saving > early_stop and auc_valid > 0.85: break
 
         return T.load(path + '.pkg')
 
@@ -542,7 +542,7 @@ class GCH_FIN(nn.Module):
         out = T.sigmoid(self.fc3(fp))
         return out
 
-    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=100, lr=1e-5):
+    def fit(self, loader_train, loader_valid, path, epochs=1000, early_stop=5, lr=1e-5):
         criterion = FocalLoss()
         optimizer = optim.Adam(self.parameters(), lr=lr)
         best_loss = np.inf
@@ -580,7 +580,7 @@ class GCH_FIN(nn.Module):
                 last_saving = epoch
             else:
                 print('[Performance] loss_valid is not improved.')
-            if early_stop is not None and epoch - last_saving > early_stop: break
+            if early_stop is not None and epoch - last_saving > early_stop and auc_valid > 0.85: break
 
         return T.load(path + '.pkg')
 
